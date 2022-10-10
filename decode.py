@@ -1,13 +1,13 @@
 secret_message = input()
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-def get_frequencies(msg : str):
+def get_frequencies(msg):
     freq = {}
     for l in msg:
         freq[l] = freq.get(l, 0) + 1
     return freq
 
-def calculate_shift(freq: dict, msg : str):
+def calculate_shift(freq, msg):
     counter = 0
     highest_freq = None
     for key in freq:
@@ -20,7 +20,7 @@ def calculate_shift(freq: dict, msg : str):
     else:
         return 4 - pos
 
-def decode_msg(shift : int, msg : str):
+def decode_msg(shift, msg):
     decoded_msg = ''
     for l in msg:
         pos = alphabet.find(l)
