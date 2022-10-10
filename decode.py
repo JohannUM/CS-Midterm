@@ -28,9 +28,11 @@ def decode_msg(shift : int, msg : str):
         if (curr_shift >= len(alphabet)):
             curr_shift = len(alphabet)-curr_shift-1
         decoded_msg = decoded_msg + alphabet[curr_shift]
-    print(decoded_msg)
+    return decoded_msg
+    print("The decoded message is: " + decoded_msg)
 
 
 s = calculate_shift(get_frequencies(secret_message), secret_message)
-decode_msg(s, secret_message)
+d = decode_msg(s, secret_message)
+print("The decoded message is: " + d)
 
